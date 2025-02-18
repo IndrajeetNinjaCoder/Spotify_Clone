@@ -21,39 +21,45 @@ struct SpotifyHomeView: View {
             ZStack {
                 Color.spotifyBlack.ignoresSafeArea()
                 
-                
-                ScrollView(.vertical) {
+                VStack {
                     
-                    LazyVStack(spacing: 1, pinnedViews: [.sectionHeaders]){
-                        Section {
-                            
-                            VStack(spacing: 16) {
-                                recentsSection
-                                    .padding(.horizontal, 16)
+                    header
+                    
+                    ScrollView(.vertical) {
+                        
+                        LazyVStack(spacing: 1){
+                            Section {
                                 
-                                if let album = vm.albums.first {
-                                    newReleasesSection(album: album)
+                                VStack(spacing: 16) {
+                                    recentsSection
                                         .padding(.horizontal, 16)
+                                    
+                                    if let album = vm.albums.first {
+                                        newReleasesSection(album: album)
+                                            .padding(.horizontal, 16)
+                                    }
+                                    
+                                    listRows
+                                    
                                 }
-                                
-                                listRows
-                                
                             }
-                        } header: {
-                            header
                         }
+                        .padding(.top, 8)
+                        
                     }
-                    .padding(.top, 8)
                     
+                    .scrollIndicators(.hidden)
+                    .clipped()
+                    
+                    Spacer()
+                    SpotifyTabBar()
                 }
-                .scrollIndicators(.hidden)
-                .clipped()
             }
             
             .task {
-                //            await getData()
                 await vm.getData()
             }
+            
         }
     }
  

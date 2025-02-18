@@ -59,30 +59,18 @@ struct PlaylistDescriptionCell: View {
                 Image(systemName: "plus.circle")
                     .padding(8)
                     .background(Color.black.opacity(0.001))
-                    .onTapGesture {
-                        
-                    }
                 
                 Image(systemName: "arrow.down.circle")
                     .padding(8)
                     .background(Color.black.opacity(0.001))
-                    .onTapGesture {
-                        
-                    }
                 
                 Image(systemName: "square.and.arrow.up")
                     .padding(8)
                     .background(Color.black.opacity(0.001))
-                    .onTapGesture {
-                        
-                    }
                 
                 Image(systemName: "ellipsis")
                     .padding(8)
                     .background(Color.black.opacity(0.001))
-                    .onTapGesture {
-                        
-                    }
                 
                 
             }
@@ -95,9 +83,6 @@ struct PlaylistDescriptionCell: View {
                 Image(systemName: "shuffle")
                     .font(.system(size: 24))
                     .background(Color.black.opacity(0.001))
-                    .onTapGesture {
-                        
-                    }
                 NavigationLink(destination: SpotifyPlayView(album: album)) {
                     Image(systemName: "play.circle.fill")
                         .font(.system(size: 46))

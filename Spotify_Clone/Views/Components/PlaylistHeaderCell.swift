@@ -37,7 +37,7 @@ struct PlaylistHeaderCell: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .background(
                     LinearGradient(
-                        colors: [shadowColor.opacity(0), shadowColor],
+                        gradient: Gradient(colors: [shadowColor.opacity(0), shadowColor]),
                         startPoint: .top,
                         endPoint: .bottom)
                 )
